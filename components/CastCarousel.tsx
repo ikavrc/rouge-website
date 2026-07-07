@@ -123,16 +123,28 @@ export default function CastCarousel() {
         </button>
       </div>
 
-      <div className={styles.dots}>
-        {safeCasts.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.dot} ${index === current ? styles.dotActive : ""}`}
-            onClick={() => setCurrent(index)}
-            aria-label={`${index + 1}番目のキャストを見る`}
-          />
-        ))}
+      <div className={styles.castIcons}>
+  {safeCasts.map((cast, index) => (
+    <button
+      key={cast.image}
+      className={`${styles.castIcon} ${
+        index === current ? styles.castIconActive : ""
+      }`}
+      onClick={() => setCurrent(index)}
+      aria-label={`キャスト ${index + 1}`}
+    >
+      <div className={styles.castIconImage}>
+        <Image
+          src={cast.image}
+          alt="Rouge Cast"
+          width={72}
+          height={72}
+        />
       </div>
+    </button>
+  ))}
+</div>
+      
 
       <a
         href={activeCast.x}

@@ -7,6 +7,10 @@
   isolation: isolate;
 }
 
+.castSectionOpen {
+  z-index: 100000;
+}
+
 .bg {
   position: absolute;
   inset: 0;
@@ -102,28 +106,28 @@
     0 0 110px rgba(180, 0, 0, .42);
 }
 
-.pos-1 {
+.posMinus1 {
   z-index: 4;
   opacity: .46;
   filter: brightness(.54);
   transform: translate(-128%, -50%) scale(.76) rotateY(18deg);
 }
 
-.pos1 {
+.posPlus1 {
   z-index: 4;
   opacity: .46;
   filter: brightness(.54);
   transform: translate(28%, -50%) scale(.76) rotateY(-18deg);
 }
 
-.pos-2 {
+.posMinus2 {
   z-index: 3;
   opacity: .23;
   filter: brightness(.34);
   transform: translate(-185%, -50%) scale(.58) rotateY(28deg);
 }
 
-.pos2 {
+.posPlus2 {
   z-index: 3;
   opacity: .23;
   filter: brightness(.34);
@@ -185,7 +189,7 @@
 
 .xButton {
   display: inline-block;
-  margin-top: 30px;
+  margin: 55px auto 34px;
   padding: 15px 52px;
   border: 1px solid rgba(212, 175, 55, .58);
   border-radius: 999px;
@@ -205,7 +209,7 @@
 .modal {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,7 +236,7 @@
   color: #d4af37;
   font-size: 52px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 @keyframes modalFade {
@@ -250,7 +254,6 @@
     transform: scale(1);
   }
 }
-
 @media (max-width: 900px) {
   .castSection {
     padding-top: 100px;
@@ -264,16 +267,16 @@
     width: 270px;
   }
 
-  .pos-1 {
+  .posMinus1 {
     transform: translate(-92%, -50%) scale(.63) rotateY(14deg);
   }
 
-  .pos1 {
+  .posPlus1 {
     transform: translate(-8%, -50%) scale(.63) rotateY(-14deg);
   }
 
-  .pos-2,
-  .pos2 {
+  .posMinus2,
+  .posPlus2 {
     opacity: 0;
     pointer-events: none;
   }
@@ -284,91 +287,9 @@
     font-size: 36px;
   }
 }
-.castIcons {
-  max-width: 980px;
-  margin: 34px auto 0;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
 
-.castIcon {
-  width: 86px;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  color: rgba(255,255,255,.65);
-  cursor: pointer;
-  transition: .3s ease;
-}
+/* CAST ICONS */
 
-.castIconImage {
-  display: block;
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 8px;
-  overflow: hidden;
-  border-radius: 999px;
-  border: 2px solid rgba(255,255,255,.18);
-  box-shadow: 0 0 18px rgba(0,0,0,.35);
-  transition: .3s ease;
-}
-
-.castIconImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.castIconName {
-  display: block;
-  font-size: 11px;
-  letter-spacing: .12em;
-  white-space: nowrap;
-  transition: .3s ease;
-}
-
-.castIcon:hover {
-  transform: translateY(-5px);
-  color: white;
-}
-
-.castIcon:hover .castIconImage {
-  border-color: rgba(212,175,55,.75);
-  box-shadow: 0 0 22px rgba(212,175,55,.35);
-}
-
-.castIconActive {
-  color: var(--gold);
-}
-
-.castIconActive .castIconImage {
-  border-color: var(--gold);
-  box-shadow:
-    0 0 18px rgba(212,175,55,.6),
-    0 0 35px rgba(180,0,0,.35);
-}
-
-@media (max-width: 900px) {
-  .castIcons {
-    max-width: 100%;
-    gap: 12px;
-  }
-
-  .castIcon {
-    width: 70px;
-  }
-
-  .castIconImage {
-    width: 56px;
-    height: 56px;
-  }
-
-  .castIconName {
-    font-size: 10px;
-  }
-}
 .castIcons {
   display: flex;
   justify-content: center;
@@ -381,8 +302,8 @@
 }
 
 .castIcon {
-  width: 62px;
-  height: 62px;
+  width: 72px;
+  height: 72px;
   padding: 0;
   border: 1px solid rgba(212, 175, 55, .22);
   border-radius: 999px;
@@ -402,16 +323,35 @@
 
 .castIconActive {
   opacity: 1;
-  border-color: rgba(212, 175, 55, .9);
+  border-color: rgba(212, 175, 55, .95);
   box-shadow:
-    0 0 18px rgba(212, 175, 55, .45),
-    0 0 35px rgba(180, 0, 0, .25);
-  transform: scale(1.12);
+    0 0 22px rgba(212, 175, 55, .65),
+    0 0 45px rgba(180, 0, 0, .35);
+  transform: translateY(-6px) scale(1.22);
+  z-index: 10;
 }
 
 .castIconImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+}
+
+.castIconImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 8%;
+}
+
+@media (max-width: 900px) {
+  .castIcons {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .castIcon {
+    width: 54px;
+    height: 54px;
+  }
 }

@@ -16,6 +16,14 @@ function wrapIndex(index: number, length: number) {
   return (index + length) % length;
 }
 
+function getPositionClass(offset: number) {
+  if (offset === -2) return styles.posMinus2;
+  if (offset === -1) return styles.posMinus1;
+  if (offset === 0) return styles.pos0;
+  if (offset === 1) return styles.posPlus1;
+  return styles.posPlus2;
+}
+
 export default function CastCarousel() {
   const [current, setCurrent] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
@@ -28,6 +36,7 @@ export default function CastCarousel() {
 
     return visibleOffsets.map((offset) => {
       const index = wrapIndex(current + offset, safeCasts.length);
+
       return {
         cast: safeCasts[index],
         index,
@@ -49,7 +58,10 @@ export default function CastCarousel() {
     };
 
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
   });
 
   if (safeCasts.length === 0) {
@@ -59,7 +71,10 @@ export default function CastCarousel() {
   const activeCast = safeCasts[current];
 
   return (
-    <section id="cast" className={styles.castSection}>
+    <section
+  id="cast"
+  className={`${styles.castSection} ${modalOpen ? styles.castSectionOpen : ""}`}
+>
       <div className={styles.bg} />
 
       <div className={styles.header}>
@@ -92,7 +107,7 @@ export default function CastCarousel() {
           {visibleCasts.map(({ cast, index, offset }) => (
             <button
               key={`${cast.image}-${offset}`}
-              className={`${styles.card} ${styles[`pos${offset}` as keyof typeof styles]}`}
+              className={`${styles.card} ${getPositionClass(offset)}`}
               onClick={() => {
                 if (offset === 0) {
                   setModalOpen(true);
@@ -123,37 +138,36 @@ export default function CastCarousel() {
         </button>
       </div>
 
-      <div className={styles.castIcons}>
-  {safeCasts.map((cast, index) => (
-    <button
-      key={cast.image}
-      className={`${styles.castIcon} ${
-        index === current ? styles.castIconActive : ""
-      }`}
-      onClick={() => setCurrent(index)}
-      aria-label={`キャスト ${index + 1}`}
-    >
-      <div className={styles.castIconImage}>
-        <Image
-          src={cast.image}
-          alt="Rouge Cast"
-          width={72}
-          height={72}
-        />
-      </div>
-    </button>
-  ))}
-</div>
-      
-
       <a
         href={activeCast.x}
         target="_blank"
         rel="noreferrer"
         className={styles.xButton}
       >
-        𝕏を見る
+        キャストX
       </a>
+
+      <div className={styles.castIcons}>
+        {safeCasts.map((cast, index) => (
+          <button
+            key={cast.image}
+            className={`${styles.castIcon} ${
+              index === current ? styles.castIconActive : ""
+            }`}
+            onClick={() => setCurrent(index)}
+            aria-label={`キャスト ${index + 1}`}
+          >
+            <div className={styles.castIconImage}>
+              <Image
+                src={cast.image}
+                alt="Rouge Cast"
+                width={72}
+                height={72}
+              />
+            </div>
+          </button>
+        ))}
+      </div>
 
       {modalOpen && (
         <div className={styles.modal} onClick={() => setModalOpen(false)}>

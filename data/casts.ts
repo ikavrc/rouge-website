@@ -60,6 +60,10 @@ export const casts = [
     x: "https://x.com/sashimi_joyu_vr",
   },
   {
+    image: "/cast/yuyu.png",
+    x: "https://x.com/16wyuyuyu",
+  },
+  {
     image: "/cast/mizuki.png",
     x: "https://x.com/nekomizuVRC",
   },
@@ -106,10 +110,6 @@ export const casts = [
   {
     image: "/cast/tomachi.png",
     x: "https://x.com/tomatooichiiyo",
-  },
-  {
-    image: "/cast/yuyu.png",
-    x: "https://x.com/16wyuyuyu",
   },
   {
     image: "/cast/okachi.png",

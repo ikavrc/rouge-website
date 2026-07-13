@@ -111,4 +111,8 @@ export const casts = [
     image: "/cast/yuyu.png",
     x: "https://x.com/16wyuyuyu",
   },
+  {
+    image: "/cast/okachi.png",
+    x: "https://x.com/OkachiMenkoVRC",
+  },
 ];

@@ -28,10 +28,6 @@ export const casts = [
     x: "https://x.com/keropi_vrc",
   },
   {
-    image: "/cast/koharu.png",
-    x: "https://x.com/khr_vrc",
-  },
-  {
     image: "/cast/korin.png",
     x: "https://x.com/Korin_vo",
   },
@@ -110,5 +106,13 @@ export const casts = [
   {
     image: "/cast/okachi.png",
     x: "https://x.com/OkachiMenkoVRC",
+  },
+  {
+    image: "/cast/mado.png",
+    x: "https://x.com/ebururu",
+  },
+  {
+    image: "/cast/hazuki.png",
+    x: "https://x.com/",
   },
 ];

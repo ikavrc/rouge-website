@@ -84,10 +84,6 @@ export const casts = [
     x: "https://x.com/s4ren_chan",
   },
   {
-    image: "/cast/shia.png",
-    x: "https://x.com/syaruru_VRC",
-  },
-  {
     image: "/cast/shino.png",
     x: "https://x.com/dile_mm",
   },

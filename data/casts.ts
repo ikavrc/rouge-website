@@ -110,5 +110,9 @@ export const casts = [
   {
     image: "/cast/hazuki.png",
     x: "https://x.com/Hazuki_game_R",
+  }, 
+  {
+    image: "/cast/mairu.png",
+    x: "https://x.com/mairu_vrc",
   },
 ];

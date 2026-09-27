@@ -8,20 +8,12 @@ export const casts = [
     x: "https://x.com/sikifure",
   },
   {
-    image: "/cast/aoc.png",
-    x: "https://x.com/A0VRC",
-  },
-  {
     image: "/cast/capuchino.png",
     x: "https://x.com/capuchi_cast",
   },
   {
     image: "/cast/chakechan.png",
     x: "https://x.com/HARIBOwaRANBO",
-  },
-  {
-    image: "/cast/iroha.png",
-    x: "https://x.com/",
   },
   {
     image: "/cast/keropi.png",
@@ -86,10 +78,6 @@ export const casts = [
   {
     image: "/cast/shino.png",
     x: "https://x.com/dile_mm",
-  },
-  {
-    image: "/cast/sumire.png",
-    x: "https://x.com/sumire1039051",
   },
   {
     image: "/cast/taru.png",

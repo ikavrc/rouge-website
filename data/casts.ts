@@ -103,4 +103,8 @@ export const casts = [
     image: "/cast/mairu.png",
     x: "https://x.com/mairu_vrc",
   },
+ {
+    image: "/cast/maru.png",
+    x: "https://x.com/tayuta_vrc",
+  },
 ];

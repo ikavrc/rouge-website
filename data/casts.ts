@@ -8,16 +8,8 @@ export const casts = [
     x: "https://x.com/sikifure",
   },
   {
-    image: "/cast/capuchino.png",
-    x: "https://x.com/capuchi_cast",
-  },
-  {
     image: "/cast/chakechan.png",
     x: "https://x.com/HARIBOwaRANBO",
-  },
-  {
-    image: "/cast/keropi.png",
-    x: "https://x.com/keropi_vrc",
   },
   {
     image: "/cast/korin.png",

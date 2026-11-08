@@ -95,4 +95,8 @@ export const casts = [
     image: "/cast/maru.png",
     x: "https://x.com/tayuta_vrc",
   },
+ {
+    image: "/cast/ase.png",
+    x: "https://x.com/l_k_o_o",
+  },
 ];
